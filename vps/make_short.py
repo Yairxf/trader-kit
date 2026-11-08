@@ -39,7 +39,7 @@ def render(bg: str, mp3: str, srt: str, out: str) -> None:
     srt_ff = srt.replace("\\", "/").replace(":", "\\:")
     vf = ("scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
           f"subtitles='{srt_ff}':force_style='FontName=Arial,Fontsize=15,Bold=1,"
-          "PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=3,Alignment=2,MarginV=260'")
+          "PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=3,Alignment=2,MarginV=60'")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-i", bg, "-i", mp3,
                     "-vf", vf, "-shortest", "-r", "30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
                     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", out], check=True)

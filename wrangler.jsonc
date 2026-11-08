@@ -1,0 +1,9 @@
+{
+  // Static site served by Cloudflare Workers (free). Only the site/ folder is published.
+  "name": "trader-kit",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}

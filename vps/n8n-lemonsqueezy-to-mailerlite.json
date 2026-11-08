@@ -1,0 +1,114 @@
+{
+  "name": "Lemon Squeezy → MailerLite buyers",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ls-8fd3e7b03e16673cef1d38c0",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "26c28c1c-1d9b-44d0-9950-cd6f59fd7023",
+      "name": "Lemon Squeezy webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "3b8820e2-cdf8-42fb-b7cf-f039df2e5e77"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "519d0bd4-b351-482d-adf1-dc1a58bc8d5d",
+              "leftValue": "={{ $json.body.meta.event_name }}",
+              "rightValue": "order_created",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "aa8b921a-fd17-4e48-96a4-e978c88c2cd6",
+      "name": "Is new order?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://connect.mailerlite.com/api/subscribers",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.MAILERLITE_API_KEY }}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ email: $json.body.data.attributes.user_email, fields: { name: $json.body.data.attributes.user_name }, groups: [ $env.MAILERLITE_BUYERS_GROUP ] }) }}",
+        "options": {}
+      },
+      "id": "4e088da9-3e72-415a-bd71-0bea5af0304e",
+      "name": "Add to MailerLite buyers",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        -80
+      ]
+    }
+  ],
+  "connections": {
+    "Lemon Squeezy webhook": {
+      "main": [
+        [
+          {
+            "node": "Is new order?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is new order?": {
+      "main": [
+        [
+          {
+            "node": "Add to MailerLite buyers",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false
+}

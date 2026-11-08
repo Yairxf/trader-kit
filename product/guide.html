@@ -1,0 +1,43 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>
+body{font-family:Arial,sans-serif;color:#14213D;line-height:1.6;margin:0;font-size:12.5pt}
+.page{padding:48px 56px;page-break-after:always}
+h1{font-size:30pt;margin:0 0 8px}h2{font-size:17pt;border-bottom:2px solid #14213D;padding-bottom:4px;margin-top:28px}
+.sub{color:#5B6578;font-size:13pt}.box{background:#FFF7CC;border-right:5px solid #D9534F;padding:12px 16px;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:11pt}td,th{border:1px solid #CFE3D4;padding:6px 8px;text-align:right}th{background:#14213D;color:#fff}
+code{direction:ltr;unicode-bidi:embed;background:#eef;padding:1px 4px}
+</style></head><body>
+<div class="page">
+<h1>ערכת הסוחר הישראלי</h1><p class="sub">מדריך התחלה מהירה</p>
+<div class="box"><b>קודם כל:</b> הכלי מסייע בארגון נתונים בלבד ואינו ייעוץ מס או השקעות. החישובים נומינליים, ואינם כוללים תיאום אינפלציה, דיבידנדים, מס שנוכה במקור או כללים מיוחדים. לפני דיווח או פעולה — רואה חשבון או יועץ מס.</div>
+<h2>מה יש בקובץ</h2>
+<table><tr><th>גיליון</th><th>מה עושים בו</th></tr>
+<tr><td>דשבורד</td><td>בוחרים שנה, שער נוכחי ושיעור מס להערכה. כל השאר מחושב.</td></tr>
+<tr><td>עסקאות סגורות</td><td>מדביקים את העסקאות שנסגרו (6 עמודות צהובות).</td></tr>
+<tr><td>פוזיציות פתוחות</td><td>סימול, כמות, מחיר קנייה ומחיר נוכחי.</td></tr>
+<tr><td>יומן מסחר</td><td>תיעוד כל טרייד: סטאפ, סטופ, יציאה, תגית טעות.</td></tr>
+<tr><td>שערים</td><td>שערים יציגים USD/ILS, תאריך בסדר עולה.</td></tr>
+<tr><td>רשימות</td><td>הסטאפים ותגיות הטעות שמופיעים בתפריטים — אפשר לערוך.</td></tr></table>
+<p>תאים צהובים = להזנה. שורות כחלחלות = דוגמה, למחוק לפני שימוש. תאים לבנים = נוסחאות.</p>
+<h2>שלב 1 — הוצאת עסקאות מ-IBKR</h2>
+<ol><li>Portal ← Performance &amp; Reports ← Flex Queries ← Activity Flex Query ← יצירה חדשה (+).</li>
+<li>בחר Section: <b>Trades</b>, ובאפשרויות סמן <b>Closed Lots</b>.</li>
+<li>שדות: Symbol, Open Date/Time, Date/Time (סגירה), Quantity, Cost Basis, Proceeds (נטו מעמלות; אם אין — הפחת Commission ידנית).</li>
+<li>פורמט CSV, תקופה: Year to Date או השנה הקודמת. הרץ והורד.</li>
+<li>העתק את העמודות לסדר שבגיליון "עסקאות סגורות": סימול, פתיחה, סגירה, כמות, עלות, תמורה נטו.</li></ol>
+<p>ברוקר אחר? אותן שש עמודות, ידנית או מהדוח שלו.</p>
+</div>
+<div class="page">
+<h2>שלב 2 — שערים</h2>
+<p>באתר בנק ישראל (שערי חליפין ← שערים יציגים ← דולר) הורד היסטוריה לשנה והדבק תאריך ושער לגיליון "שערים". אם לתאריך מסוים אין שער (סוף שבוע, חג), הגיליון לוקח את השער האחרון שלפניו. עמודת "בדיקה" בעסקאות מסמנת שורה שחסר לה שער.</p>
+<h2>שלב 3 — הדשבורד</h2>
+<ul><li><b>שיטה א׳:</b> העלות מומרת לפי השער ביום הקנייה, התמורה לפי השער ביום המכירה.</li>
+<li><b>שיטה ב׳:</b> הרווח בדולרים כפול השער ביום המכירה.</li>
+<li>איזו שיטה חלה עליך — שאלה לרו״ח. הגיליון מציג את שתיהן כדי שהשיחה תהיה קצרה.</li>
+<li><b>פוטנציאל קיזוז:</b> הקטן מבין הרווח הממומש נטו לבין ההפסדים הפתוחים. זו הערכה, לא המלצה למכור.</li></ul>
+<h2>שלב 4 — יומן מסחר</h2>
+<p>לכל טרייד: כניסה, סטופ, יציאה, כמות וכיוון. הגיליון מחשב סיכון למניה, R ורווח/הפסד. תייג כל טרייד בתגית טעות (או "ללא טעות"). בדשבורד, טבלת התגיות מראה איזו טעות עלתה הכי הרבה — זו הראשונה לתקן.</p>
+<h2>Google Sheets</h2>
+<p>Drive ← חדש ← העלאת קובץ ← פתח באמצעות Google Sheets. כל הנוסחאות נתמכות.</p>
+<h2>תמיכה והחזרים</h2>
+<p>שאלה או בעיה — השב למייל הרכישה. החזר מלא תוך 14 יום.</p>
+</div></body></html>

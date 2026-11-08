@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ערכת הסוחר הישראלי — קיזוז הפסדים, יומן מסחר ודוח שנתי</title>
+<meta name="description" content="גיליון בעברית לסוחרים עם ברוקר זר: מדביקים עסקאות מ-IBKR ורואים רווח ממומש בשקלים, הפסדים פתוחים ופוטנציאל קיזוז לפני 31 בדצמבר.">
+<meta property="og:title" content="יש לך מניות באדום? עד 31.12 עוד אפשר להשתמש בהן.">
+<meta property="og:description" content="ערכת הסוחר הישראלי: יומן מסחר, המרה לשקלים וסיכום שנתי. מחשבון חינמי בפנים.">
+<meta property="og:image" content="/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314213D'/%3E%3Cpath d='M7 22h18M7 16h18M7 10h18' stroke='%23CFE3D4' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="brand" href="/">הסוחר הישראלי</a>
+  <span class="clock" id="clock" aria-live="polite"></span>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>יש לך מניות באדום? עד 31 בדצמבר עוד אפשר להשתמש בהן.</h1>
+      <p class="lede">רווח שמימשת השנה בברוקר זר חייב במס. הפסד שמימשת באותה שנה יכול לקזז אותו. ערכת הסוחר מראה לך את שני המספרים בשקלים, תוך כמה דקות, מתוך הדוח של הברוקר.</p>
+      <div class="actions">
+        <a class="btn primary checkout" href="#">לקבל את הערכה — 69 ₪</a>
+        <a class="btn ghost" href="#free">קודם המחשבון החינמי</a>
+      </div>
+      <p class="fine">קובץ Excel / Google Sheets. גישה מיידית אחרי התשלום.</p>
+    </div>
+
+    <form class="ledger" id="calc" aria-labelledby="calc-title" onsubmit="return false">
+      <h2 id="calc-title">בדיקה מהירה</h2>
+      <label class="row">
+        <span>רווח ממומש השנה ($)</span>
+        <input inputmode="decimal" id="gain" value="4000" aria-describedby="calc-note">
+      </label>
+      <label class="row">
+        <span>הפסד פתוח בתיק ($)</span>
+        <input inputmode="decimal" id="loss" value="2500">
+      </label>
+      <label class="row">
+        <span>שער דולר</span>
+        <input inputmode="decimal" id="fx" value="3.68">
+      </label>
+      <div class="row total">
+        <span>אפשר לקזז עד</span>
+        <output id="offset">—</output>
+      </div>
+      <div class="row total">
+        <span>מס שעשוי להיחסך (25%)</span>
+        <output id="saving">—</output>
+      </div>
+      <p class="note" id="calc-note">הערכה גסה בשער אחד. לא המלצה למכור ולא ייעוץ מס.</p>
+    </form>
+  </section>
+
+  <section class="inside">
+    <h2>מה יש בגיליון</h2>
+    <ol class="ruled">
+      <li><strong>הדבקה מ-IBKR.</strong> עמודות שתואמות את דוח Closed Lots. גם ברוקר אחר עובד, מזינים ידנית.</li>
+      <li><strong>המרה לשקלים לפי יום העסקה.</strong> כל קנייה וכל מכירה לפי השער היציג שלה, בשתי שיטות חישוב זו לצד זו.</li>
+      <li><strong>דשבורד שנתי.</strong> רווחים, הפסדים, נטו, הפסדים פתוחים ופוטנציאל קיזוז לשנה שבחרת.</li>
+      <li><strong>יומן מסחר.</strong> סטאפ, סטופ, יציאה, R לכל טרייד ותגית טעות. הדשבורד מראה איזו טעות עלתה לך הכי הרבה.</li>
+      <li><strong>סיכום לרואה החשבון.</strong> המספרים מסודרים כך שאפשר להעביר אותם הלאה בלי להסביר.</li>
+    </ol>
+  </section>
+
+  <section class="free" id="free">
+    <h2>המחשבון החינמי</h2>
+    <p>גרסה מצומצמת: 20 עסקאות סגורות ו-20 פוזיציות פתוחות. משאירים מייל ומורידים מיד.</p>
+    <form class="signup" id="signup">
+      <label for="email" class="sr">כתובת מייל</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com" dir="ltr" autocomplete="email">
+      <button class="btn primary" type="submit">לשלוח לי את המחשבון</button>
+      <p class="form-msg" id="form-msg" role="status"></p>
+    </form>
+    <p class="fine">מקבלים את הקובץ ועוד כמה מיילים קצרים על קיזוז ויומן מסחר. ביטול בלחיצה.</p>
+  </section>
+
+  <section class="faq">
+    <h2>שאלות</h2>
+    <details><summary>זה מחליף רואה חשבון?</summary><p>לא. זה מסדר את הנתונים כדי שתבין איפה אתה עומד, ושההכנה מול רו״ח תהיה קצרה וזולה יותר. ההחלטות והדיווח — מולו.</p></details>
+    <details><summary>אילו ברוקרים נתמכים?</summary><p>הגיליון בנוי על דוח Closed Lots של Interactive Brokers. מכל ברוקר אחר אפשר להזין את אותן שש עמודות ידנית: סימול, תאריכי פתיחה וסגירה, כמות, עלות ותמורה.</p></details>
+    <details><summary>מאיפה השערים?</summary><p>מזינים את השער היציג מאתר בנק ישראל. הגיליון לוקח לכל עסקה את השער של היום שלה, או האחרון שלפניו.</p></details>
+    <details><summary>מה עם דיבידנדים ומס שנוכה במקור?</summary><p>לא בגרסה הזו. הגיליון מכסה רווח והפסד מניירות ערך שנמכרו.</p></details>
+    <details><summary>Excel או Google Sheets?</summary><p>שניהם. מקבלים קובץ xlsx שנפתח ב-Excel, ומעלים אותו ל-Google Drive אם נוח יותר.</p></details>
+    <details><summary>ואם זה לא מתאים לי?</summary><p>שולחים מייל תוך 14 יום ומקבלים את הכסף בחזרה.</p></details>
+  </section>
+
+  <section class="close">
+    <p class="big" id="days-left"></p>
+    <a class="btn primary checkout" href="#">לקבל את הערכה — 69 ₪</a>
+  </section>
+</main>
+
+<footer>
+  <p>הכלי מסייע בארגון נתונים בלבד ואינו ייעוץ מס או ייעוץ השקעות. לפני דיווח או פעולה בחשבון — התייעצו עם רואה חשבון או יועץ מס.</p>
+  <p><a href="/legal.html">תנאי שימוש ופרטיות</a> · <a href="mailto:CONTACT_EMAIL" class="contact">יצירת קשר</a></p>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

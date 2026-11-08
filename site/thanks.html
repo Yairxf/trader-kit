@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>המחשבון בדרך — הסוחר הישראלי</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="bar"><a class="brand" href="/">הסוחר הישראלי</a></header>
+<main class="page">
+  <h1>המחשבון שלך מוכן</h1>
+  <p>שלחנו עותק גם למייל. אפשר להוריד כבר עכשיו:</p>
+  <p><a class="btn primary" href="/downloads/free-offset-calculator.xlsx" download>להוריד את המחשבון (xlsx)</a></p>
+  <h2>שלוש דקות שימוש</h2>
+  <ol>
+    <li>עדכן את שער הדולר בתא הצהוב.</li>
+    <li>הזן את העסקאות שסגרת השנה: עלות ותמורה בדולרים.</li>
+    <li>הזן פוזיציות פתוחות ומחיר נוכחי. למטה תראה את פוטנציאל הקיזוז.</li>
+  </ol>
+  <p>הגרסה המלאה ממירה כל עסקה לפי השער היציג ביום שלה, כוללת יומן מסחר עם R ותגיות טעות, ודשבורד שנתי.</p>
+  <p><a class="btn ghost checkout" href="#">לראות את הערכה המלאה</a></p>
+  <p class="fine">הכלי מסייע בארגון נתונים ואינו ייעוץ מס. בדוק עם רו״ח לפני פעולה.</p>
+</main>
+<script src="/config.js"></script>
+<script>
+  document.querySelectorAll(".checkout").forEach(function(a){ a.href = (window.KIT && KIT.CHECKOUT_URL) || "/"; });
+</script>
+</body>
+</html>

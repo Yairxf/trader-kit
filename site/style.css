@@ -1,0 +1,86 @@
+:root{
+  --paper:#F3F5F2;      /* ledger paper, cool */
+  --ink:#14213D;        /* fountain-pen blue-black */
+  --rule:#CFE3D4;       /* ledger green rule */
+  --margin:#D9534F;     /* red margin line */
+  --loss:#B42318;
+  --mark:#FFE45C;       /* highlighter */
+  --muted:#5B6578;
+  --serif:"Frank Ruhl Libre",Georgia,serif;
+  --sans:"Assistant",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bar{display:flex;justify-content:space-between;align-items:baseline;max-width:1120px;margin:0 auto;padding:20px 24px}
+.brand{font:800 20px/1 var(--serif);text-decoration:none}
+.clock{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+main{max-width:1120px;margin:0 auto;padding:0 24px}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;padding:40px 0 72px}
+h1{font:800 clamp(34px,5vw,58px)/1.08 var(--serif);margin:0 0 20px;letter-spacing:-.01em;max-width:15ch}
+.lede{font-size:20px;max-width:34em;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font:700 18px/1 var(--sans);padding:17px 24px;border-radius:6px;text-decoration:none;border:2px solid var(--ink);cursor:pointer}
+.btn.primary{background:var(--mark);color:var(--ink)}
+.btn.primary:hover{background:#FFD91F}
+.btn.ghost{background:transparent}
+.fine{font-size:14px;color:var(--muted);margin:12px 0 0}
+
+/* the ledger card: the one memorable object */
+.ledger{position:relative;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:22px 44px 18px 22px;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 47px,var(--rule) 47px 48px);
+  background-position:0 66px;box-shadow:8px 8px 0 var(--ink)}
+.ledger::before{content:"";position:absolute;top:0;bottom:0;right:28px;width:2px;background:var(--margin);opacity:.7}
+.ledger h2{font:500 22px/1 var(--serif);margin:0 0 20px;height:24px}
+.row{display:flex;justify-content:space-between;align-items:center;height:48px;gap:12px}
+.row span{font-size:16px}
+.row input{width:120px;font:600 20px var(--sans);font-variant-numeric:tabular-nums;color:var(--ink);background:transparent;
+  border:0;border-bottom:2px dashed var(--muted);text-align:left;direction:ltr;padding:4px 2px}
+.row input:focus{outline:none;border-bottom-color:var(--ink);background:#FFFBE0}
+.row.total span{font-weight:700}
+.row output{font:800 24px var(--serif);font-variant-numeric:tabular-nums;direction:ltr}
+#offset{background:linear-gradient(transparent 55%,var(--mark) 55%)}
+.note{font-size:13px;color:var(--muted);margin:10px 0 0;line-height:1.4}
+
+section h2{font:800 34px/1.15 var(--serif);margin:0 0 20px}
+.inside,.free,.faq{max-width:760px;padding:56px 0;border-top:2px solid var(--ink)}
+.ruled{list-style:none;counter-reset:n;margin:0;padding:0}
+.ruled li{counter-increment:n;position:relative;padding:14px 48px 14px 0;border-bottom:1px solid var(--rule)}
+.ruled li::before{content:counter(n);position:absolute;right:0;top:12px;font:800 22px/1 var(--serif);color:var(--margin)}
+
+.signup{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0}
+.signup input{flex:1 1 260px;font:400 18px var(--sans);padding:15px 14px;border:2px solid var(--ink);border-radius:6px;background:#fff}
+.form-msg{flex-basis:100%;margin:0;font-size:15px;min-height:1.4em}
+.form-msg.err{color:var(--loss)}
+
+details{border-bottom:1px solid var(--rule);padding:14px 0}
+summary{font-weight:700;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";display:inline-block;width:1.4em;font-weight:800;color:var(--margin)}
+details[open] summary::before{content:"–"}
+details p{margin:8px 1.4em 0 0;max-width:38em}
+
+.close{padding:64px 0 88px;border-top:2px solid var(--ink);text-align:center}
+.big{font:800 clamp(28px,4vw,44px)/1.15 var(--serif);margin:0 0 24px}
+
+footer{border-top:2px solid var(--ink);max-width:1120px;margin:0 auto;padding:24px;font-size:14px;color:var(--muted)}
+footer p{margin:6px 0;max-width:60em}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:16px}
+  .ledger{box-shadow:5px 5px 0 var(--ink);padding-right:38px}
+  .row input{width:84px;font-size:18px}
+  .row span{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* simple pages */
+.page{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+.page h1{font-size:clamp(30px,4vw,44px);max-width:none}
+.page h2{font-size:24px;margin-top:36px}

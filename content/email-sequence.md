@@ -3,7 +3,7 @@
 טריגר: **Subscriber joins group "free-calculator"** (הקבוצה שהטופס באתר מכניס אליה).
 תנאי יציאה: המנוי נמצא בקבוצה "buyers" (n8n מוסיף אליה כל קונה) → הוא יוצא מהרצף ולא מקבל עוד הצעות.
 
-החלף `{CHECKOUT}` בקישור ה-Checkout ו-`{SITE}` בכתובת האתר.
+החלף `https://trader-kit.lemonsqueezy.com/checkout/buy/587bbfac-a8ca-47e6-a399-abf685ef3e70` בקישור ה-Checkout ו-`https://trader-kit.yair8798.workers.dev` בכתובת האתר.
 
 ---
 
@@ -12,7 +12,7 @@
 
 היי,
 
-הנה מחשבון הקיזוז: {SITE}/downloads/free-offset-calculator.xlsx
+הנה מחשבון הקיזוז: https://trader-kit.yair8798.workers.dev/downloads/free-offset-calculator.xlsx
 
 שלושה צעדים:
 1. עדכן את שער הדולר בתא הצהוב.
@@ -61,17 +61,17 @@
 69 ₪. ל-50 הרוכשים הראשונים יש קוד **FIRST50** ל-30% הנחה.
 החזר מלא תוך 14 יום אם לא מתאים.
 
-{CHECKOUT}
+https://trader-kit.lemonsqueezy.com/checkout/buy/587bbfac-a8ca-47e6-a399-abf685ef3e70
 
 ---
 
 ## מייל 4 — יום 7
-**נושא:** {DAYS} ימים עד 31.12
+**נושא:** הזמן עד 31.12 מתקצר
 
 קיזוז הפסדים נגד רווחים שמומשו השנה רלוונטי רק לעסקאות שמומשו עד סוף שנת המס.
 
 אם עדיין לא בדקת איפה אתה עומד — עכשיו זמן טוב. המחשבון החינמי נותן כיוון, הערכה המלאה נותנת את המספרים בשקלים לפי יום העסקה.
 
-{CHECKOUT}
+https://trader-kit.lemonsqueezy.com/checkout/buy/587bbfac-a8ca-47e6-a399-abf685ef3e70
 
 ובכל מקרה: לפני שמממשים משהו בגלל מס — שיחה קצרה עם רו״ח.

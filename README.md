@@ -41,8 +41,8 @@ content/
 5. Share → העתק את ה-**Checkout URL** → שלח לי (או הדבק ב-`site/config.js` → `CHECKOUT_URL`).
 
 ### 3. מיילים — MailerLite (20 דקות)
-1. הרשמה (Free). Subscribers → Groups: צור `free-calculator` ו-`buyers`.
-2. Forms → Embedded form → מחובר לקבוצה `free-calculator`, ובהגדרות: אחרי הרשמה redirect ל-`https://<האתר>/thanks.html`.
+1. הרשמה (Free). Subscribers → Groups: צור `free` ו-`buyers`.
+2. Forms → Embedded form → מחובר לקבוצה `free`, ובהגדרות: אחרי הרשמה redirect ל-`https://<האתר>/thanks.html`.
 3. מה-HTML של הטופס העתק את ה-`action` (נראה כמו `https://assets.mailerlite.com/jsonp/.../subscribe`) → `MAILERLITE_ACTION` ב-config.js.
 4. Automations → New → טריגר "joins group free-calculator" → העתק את 5 המיילים מ-`content/email-sequence.md`. הוסף תנאי יציאה: חבר בקבוצה `buyers`.
 5. Integrations → API → צור מפתח (לשלב 4). **אל תשלח לי אותו בצ'אט** — מזינים אותו רק ב-VPS.
